@@ -118,7 +118,7 @@ function voteHandler(e:any) {
   axios.post(`https://gopollserver.herokuapp.com/vote/${optionID}/${pollID}/${userMail}/`)
   .then((res) => {
     if (res.status === 200) {
-      history(`resultPoll/${pollID}/${pollLink}`)
+      history(`../resultPoll/${pollID}/${pollLink}`)
     }
   })
   .catch(() => {
