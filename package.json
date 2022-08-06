@@ -54,5 +54,5 @@
     ]
   },
 
-  "proxy": "https://gopoll.herokuapp.com"
+  "proxy": "https://gopollserver.herokuapp.com"
 }
