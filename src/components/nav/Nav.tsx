@@ -20,7 +20,7 @@ function Nav(props: any) {
   const currentUser = localStorage.getItem('email')
   return (
     <div className='nav' style={{width: '100%', height: '50px', margin: '0', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-        <Link to='/'>
+        <Link to='/poll'>
         <div>
           <span><GoPoll/></span>
           </div>
