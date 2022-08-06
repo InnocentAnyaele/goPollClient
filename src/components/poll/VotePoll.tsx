@@ -42,6 +42,15 @@ function VotePoll() {
     // const [hasVotes, setHasVotes] = useState(false)
 
      useEffect(()=> {
+
+      let userEmail = localStorage.getItem('email') == null ? false : true
+        if (!userEmail){
+              localStorage.setItem('link', `votePoll/${pollID}/${pollLink}/`)
+              history('../')
+              return
+        }
+        localStorage.removeItem('link')
+
       document.title = 'GoPoll Vote'
         // axios.get(`http://127.0.0.1:8000/checkVote/${pollID}/${pollLink}/${userMail}/`)
         axios.get(`https://gopollserver.herokuapp.com/checkVote/${pollID}/${pollLink}/${userMail}/`)

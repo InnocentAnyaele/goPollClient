@@ -27,9 +27,9 @@ function App() {
   <Routes>
     <Route element={<PollPrivateRoute/>}>
       <Route path = "/poll" element={<Poll/>} />
-      <Route path='/resultPoll/:pollID/:pollLink' element={<ResultPoll/>}/>
-    <Route path='/votePoll/:pollID/:pollLink' element={<VotePoll/>}/>
     </Route>
+    <Route path='/votePoll/:pollID/:pollLink' element={<VotePoll/>}/>
+    <Route path='/resultPoll/:pollID/:pollLink' element={<ResultPoll/>}/>
     <Route path ="/" element={<Main/>}/>
   </Routes>
 </Router>
