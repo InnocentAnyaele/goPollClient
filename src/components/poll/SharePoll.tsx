@@ -6,7 +6,7 @@ import Button from '@mui/material/Button'
 
 function SharePoll(props:any) {
 
-  const shareLink = `https://gopollserver.herokuapp.com/votePoll/${props.id}/${props.linkID}`
+  const shareLink = `https://gopoll.herokuapp.com/votePoll/${props.id}/${props.linkID}`
   
   function copyLink() {
     navigator.clipboard.writeText(shareLink)
@@ -16,7 +16,6 @@ function SharePoll(props:any) {
   return (
     <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '40px'}}>
         <Box sx={{
-             width: 400,
         backgroundColor: 'white',
         display: 'flex',
         flexDirection: 'column',

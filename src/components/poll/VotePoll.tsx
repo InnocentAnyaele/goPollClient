@@ -31,6 +31,7 @@ function VotePoll() {
 
     const [pollName, setPollName] = useState('')
     const [pollBody, setPollBody] = useState('')
+    const [anonymous, setAnonymous] = useState(false)
 
     // const [isPollCreator, setIsPollCreator] = useState(false)
     // const [hasUserVoted, setHasUserVoted] = useState(false)
@@ -51,6 +52,7 @@ function VotePoll() {
               const pollBodyRes:any = res.data.poll[0].pollBody
               // const pollRes:any = res.data.poll[0]
               const pollClose:any = new Date(res.data.poll[0].pollCloseAt)
+              const anonymousRes:any = res.data.poll[0].anonymous
               // const pollCreated:any = res.data.poll[0].pollCreated
               let currentDate = new Date()
               // const userMailRes = res.data.poll[0].userMail
@@ -59,6 +61,7 @@ function VotePoll() {
               setOptions(optionsRes)
               setPollName(pollNameRes)
               setPollBody(pollBodyRes)
+              setAnonymous(anonymousRes)
               // setPoll(pollRes)
               // setPollCloseAt(pollClose)
               // setPollCreated(pollCreated)
@@ -164,6 +167,7 @@ function voteHandler(e:any) {
 
 
   </RadioGroup>
+  <p style={{color: 'blue'}}><i>{anonymous ? 'this poll is anonymous': 'this poll is not anonymous'}</i></p>
   <Button variant='contained' type='submit' disabled={voteLoading} style={{margin: '5px'}}>Vote</Button>
 </FormControl>
     </form>
