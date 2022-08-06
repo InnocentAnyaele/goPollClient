@@ -46,7 +46,7 @@ try {
 
   setError('')
   setLoading(true)
-  await axios.post('createPoll/', formData, { headers: { "Content-Type": "multipart/form-data" }} )
+  await axios.post('https://gopollserver.herokuapp.com/createPoll/', formData, { headers: { "Content-Type": "multipart/form-data" }} )
   .then((res) => {
     if (res.status === 201){
       setSeverity('success')

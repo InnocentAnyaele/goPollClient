@@ -43,7 +43,7 @@ function VotePoll() {
      useEffect(()=> {
       document.title = 'GoPoll Vote'
         // axios.get(`http://127.0.0.1:8000/checkVote/${pollID}/${pollLink}/${userMail}/`)
-        axios.get(`/checkVote/${pollID}/${pollLink}/${userMail}/`)
+        axios.get(`https://gopollserver.herokuapp.com/checkVote/${pollID}/${pollLink}/${userMail}/`)
         .then((res) => {
             if (res.status === 200) {
               const optionsRes:any = res.data.options
@@ -112,7 +112,7 @@ function voteHandler(e:any) {
   e.preventDefault()
   setVoteLoading(true)
   // axios.post(`http://127.0.0.1:8000/vote/${optionID}/${pollID}/${userMail}/`)
-  axios.post(`/vote/${optionID}/${pollID}/${userMail}/`)
+  axios.post(`https://gopollserver.herokuapp.com/vote/${optionID}/${pollID}/${userMail}/`)
   .then((res) => {
     if (res.status === 200) {
       history(`resultPoll/${pollID}/${pollLink}`)

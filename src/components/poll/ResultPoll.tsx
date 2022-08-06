@@ -38,7 +38,7 @@ function ResultPoll() {
      useEffect(()=> {
       document.title = 'GoPoll Results'
         // axios.get(`http://127.0.0.1:8000/checkVote/${pollID}/${pollLink}/${userMail}/`)
-        axios.get(`/checkVote/${pollID}/${pollLink}/${userMail}/`)
+        axios.get(`https://gopollserver.herokuapp.com/checkVote/${pollID}/${pollLink}/${userMail}/`)
         .then((res) => {
             if (res.status === 200) {
               const optionsRes:any = res.data.options

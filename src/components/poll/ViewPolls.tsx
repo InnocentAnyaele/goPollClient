@@ -27,7 +27,7 @@ function ViewPolls() {
 
   useEffect(() => {
     console.log('reached effect')
-    axios.get(`viewPolls/${userMail}/`)
+    axios.get(`https://gopollserver.herokuapp.com/viewPolls/${userMail}/`)
     .then((res) => {
       if (res.status === 200) {
         setData(res.data.data)
@@ -49,7 +49,7 @@ function ViewPolls() {
 
   function deletePollHandler(deleteID:any) {
     console.log(deleteID)
-    axios.delete(`deletePoll/${deleteID}`)
+    axios.delete(`https://gopollserver.herokuapp.com/deletePoll/${deleteID}`)
     .then((res) => {
         if (res.status === 200) {
           console.log(res.data)
