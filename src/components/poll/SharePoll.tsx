@@ -6,7 +6,7 @@ import Button from '@mui/material/Button'
 
 function SharePoll(props:any) {
 
-  const shareLink = `http://localhost:3000/votePoll/${props.id}/${props.linkID}`
+  const shareLink = `https://gopollserver.herokuapp.com/votePoll/${props.id}/${props.linkID}`
   
   function copyLink() {
     navigator.clipboard.writeText(shareLink)
